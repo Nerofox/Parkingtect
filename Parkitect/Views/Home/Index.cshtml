@@ -19,4 +19,26 @@
         center: [-1.650369, 48.109998], // starting position [lng, lat]
         zoom: 11.70801835251593 // starting zoom
     });
+
+    $(document).ready(function () {
+        //load parking in map
+        $.get("/ApiParking/List", function (data) {
+            data = JSON.parse(data);
+
+            for (var i = 0; i < data.length; i++) {
+                // create the popup
+                var popup = new mapboxgl.Popup().setHTML("Nom : " + data[i].Name + "<br>Place libre : " + data[i].FreePlace + "<br>Place max : " + data[i].MaxPlace);
+
+                // create DOM element for the marker
+                var el = document.createElement('div');
+                el.className = 'marker';
+
+                // create the marker
+                new mapboxgl.Marker(el)
+                    .setLngLat(data[i].Geometry.coordinates)
+                    .setPopup(popup) // sets a popup on this marker
+                    .addTo(map);
+            }
+        });
+    });
 </script>
