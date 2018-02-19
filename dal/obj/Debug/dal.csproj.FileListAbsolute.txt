@@ -1,0 +1,14 @@
+\\147-UC47-06\FreeParking\dal\obj\Debug\dal.csprojResolveAssemblyReference.cache
+\\147-UC47-06\FreeParking\dal\bin\Debug\dal.dll.config
+\\147-UC47-06\FreeParking\dal\bin\Debug\dal.dll
+\\147-UC47-06\FreeParking\dal\bin\Debug\dal.pdb
+\\147-UC47-06\FreeParking\dal\bin\Debug\bo.dll
+\\147-UC47-06\FreeParking\dal\bin\Debug\EntityFramework.dll
+\\147-UC47-06\FreeParking\dal\bin\Debug\EntityFramework.SqlServer.dll
+\\147-UC47-06\FreeParking\dal\bin\Debug\bo.pdb
+\\147-UC47-06\FreeParking\dal\bin\Debug\EntityFramework.xml
+\\147-UC47-06\FreeParking\dal\bin\Debug\EntityFramework.SqlServer.xml
+\\147-UC47-06\FreeParking\dal\bin\Debug\fr\EntityFramework.resources.dll
+\\147-UC47-06\FreeParking\dal\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+\\147-UC47-06\FreeParking\dal\obj\Debug\dal.dll
+\\147-UC47-06\FreeParking\dal\obj\Debug\dal.pdb
