@@ -9,6 +9,8 @@ namespace bo
 {
     public class Evenement
     {
+
+
         public int Id { get; set; }
 
         public string Ville { get; set; }
