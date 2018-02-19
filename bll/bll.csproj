@@ -43,6 +43,16 @@
     <Compile Include="EvenementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bo\bo.csproj">
+      <Project>{55ac39cb-e472-4f10-b0bc-9147242274ec}</Project>
+      <Name>bo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dal\dal.csproj">
+      <Project>{b856bc53-3347-43d9-a837-b58e0b0f91d6}</Project>
+      <Name>dal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

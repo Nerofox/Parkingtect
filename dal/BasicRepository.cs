@@ -20,6 +20,11 @@ namespace dal
             this.dbSet = ctx.Set<T>();
         }
 
+        public BasicRepository<U> CreateRepository<U>() where U : class
+        {
+            return new BasicRepository<U>();
+        }
+
         public T Find(int id)
         {
             return this.dbSet.Find(id);
@@ -32,7 +37,7 @@ namespace dal
 
         public virtual void Update(T obj)
         {
-            this.dbSet.AddOrUpdate(obj);
+            this.ctx.Entry(obj).State = EntityState.Modified;
             this.Save();
         }
 
@@ -58,6 +63,11 @@ namespace dal
             {
                 Console.WriteLine(e);
             }
+        }
+
+        protected virtual void Dispose()
+        {
+            this.ctx.Dispose();
         }
     }
 }

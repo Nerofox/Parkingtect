@@ -21,5 +21,25 @@ namespace bll
         {
             return this.eventRepository.FindAll();
         }
+
+        public Evenement Find(int Id)
+        {
+            return this.eventRepository.Find(Id);
+        }
+
+        public void Update(Evenement evt)
+        {
+            this.eventRepository.Update(evt);
+        }
+
+        public void Create(Evenement evt)
+        {
+            this.eventRepository.Create(evt);
+        }
+
+        public void Remove(Evenement evt)
+        {
+            this.eventRepository.Remove(evt);
+        }
     }
 }
