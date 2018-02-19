@@ -54,10 +54,6 @@
     <Compile Include="Context.cs" />
     <Compile Include="EvenementImageRepository.cs" />
     <Compile Include="EvenementRepository.cs" />
-    <Compile Include="Migrations\201802191049571_first.cs" />
-    <Compile Include="Migrations\201802191049571_first.Designer.cs">
-      <DependentUpon>201802191049571_first.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,11 +66,6 @@
       <Project>{55ac39cb-e472-4f10-b0bc-9147242274ec}</Project>
       <Name>bo</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802191049571_first.resx">
-      <DependentUpon>201802191049571_first.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
