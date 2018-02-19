@@ -1,0 +1,12 @@
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\bll.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\bll.pdb
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\bo.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\dal.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\EntityFramework.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\bo.pdb
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\dal.pdb
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\EntityFramework.xml
+C:\Users\Administrateur\Desktop\Parkingtect\bll\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\obj\Debug\bll.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur\Desktop\Parkingtect\bll\obj\Debug\bll.dll
+C:\Users\Administrateur\Desktop\Parkingtect\bll\obj\Debug\bll.pdb

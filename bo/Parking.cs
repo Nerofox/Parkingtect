@@ -11,17 +11,19 @@ namespace bo
     {
         public string Id { get; set; }
 
-        public string Nom { get; set; }
+        public string Name { get; set; }
 
         public string Status { get; set; }
 
-        public int PlaceTotale { get; set; }
+        public int MaxPlace { get; set; }
 
-        public int PlaceLibre { get; set; }
+        public int FreePlace { get; set; }
 
         public double Longitude { get; set; }
 
         public double Latitude { get; set; }
+
+        public dynamic Geometry { get; set; }
 
         public Parking()
         {

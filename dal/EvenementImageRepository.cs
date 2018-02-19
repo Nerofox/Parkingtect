@@ -7,7 +7,7 @@ using bo;
 
 namespace dal
 {
-    class EvenementImageRepository : BasicRepository<EvenementImage>
+    public class EvenementImageRepository : BasicRepository<EvenementImage>
     {
     }
 }
