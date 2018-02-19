@@ -17,6 +17,8 @@ namespace bo
 
         public string ZipCode { get; set; }
 
+        public int Duration { get; set; }
+
         public string Theme { get; set; }
 
         public DateTime Date { get; set; }
