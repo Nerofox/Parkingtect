@@ -7,7 +7,12 @@ using bo;
 
 namespace dal
 {
-    class EvenementRepository : BasicRepository<Evenement>
+    public class EvenementRepository : BasicRepository<Evenement>
     {
+        public override void Update(Evenement obj)
+        {
+     
+            base.Update(obj);
+        }
     }
 }

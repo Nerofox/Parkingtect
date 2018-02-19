@@ -11,11 +11,13 @@ namespace bo
     {
         public int Id { get; set; }
 
-        public string Ville { get; set; }
+        public string City { get; set; }
 
-        public string Adresse { get; set; }
+        public string Address { get; set; }
 
-        public string CodePostal { get; set; }
+        public string ZipCode { get; set; }
+
+        public int Duration { get; set; }
 
         public string Theme { get; set; }
 
