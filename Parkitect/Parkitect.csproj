@@ -209,8 +209,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\agency.css" />
+    <Content Include="Content\agency.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\js\admin.js" />
+    <Content Include="Content\js\agency.js" />
+    <Content Include="Content\js\agency.min.js" />
+    <Content Include="Content\js\alchem-admin.js" />
+    <Content Include="Content\js\contact_me.js" />
+    <Content Include="Content\js\contact_me.min.js" />
+    <Content Include="Content\js\customizer.js" />
+    <Content Include="Content\js\html5.js" />
+    <Content Include="Content\js\jqBootstrapValidation.js" />
+    <Content Include="Content\js\jqBootstrapValidation.min.js" />
+    <Content Include="Content\js\jquery.easing.min.js" />
+    <Content Include="Content\js\jquery.infinitescroll.js" />
+    <Content Include="Content\js\jquery.nav.js" />
+    <Content Include="Content\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\menu.js" />
+    <Content Include="Content\js\parallax.js" />
+    <Content Include="Content\js\respond.min.js" />
     <Content Include="Content\mapbox.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

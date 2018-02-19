@@ -5,8 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Carte des parkings rennaise</h2>
-        <div id="map"></div>
-        </div>
+        <div id="map"></div>        
     </div>
 </div>
 
@@ -17,6 +16,18 @@
         container: 'map', // container id
         style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
         center: [-1.650369, 48.109998], // starting position [lng, lat]
-        zoom: 11.70801835251593 // starting zoom
+        zoom: 13.70801835251593 // starting zoom
     });
+
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+
+    map.addControl(new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken
+    }));
 </script>
