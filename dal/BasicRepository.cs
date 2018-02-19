@@ -1,32 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace dal
 {
-    public class BasicRepository<T>
+    public class BasicRepository<T> where T : class
     {
+
+        private Context ctx;
+        private DbSet<T> dbSet;
+
+        public BasicRepository()
+        {
+            this.ctx = new Context();
+            this.dbSet = ctx.Set<T>();
+        }
+
+        public T Find(int id)
+        {
+            return this.dbSet.Find(id);
+        }
 
         public List<T> FindAll()
         {
-            return new List<T>();
+            return this.dbSet.ToList();
         }
 
-        public void Update(T obj)
+        public virtual void Update(T obj)
         {
-
+            this.dbSet.AddOrUpdate(obj);
+            this.Save();
         }
 
         public void Create(T obj)
         {
-
+            this.dbSet.Add(obj);
+            this.Save();
         }
 
-        public void Remove(int id)
+        public void Remove(T obj)
         {
+            this.dbSet.Remove(obj);
+            this.Save();
+        }
 
+        protected void Save()
+        {
+            try
+            {
+                this.ctx.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }
