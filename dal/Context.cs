@@ -10,12 +10,12 @@ namespace dal
 {
     class Context : DbContext
     {
-        public Context() : base("name=ParkitectString")
+        public Context() : base("name=DefaultConnection")
         {
 
         }
 
-        public DbSet<Evenement> Evenements { get; set; }
-        public DbSet<EvenementImage> EvenementImages { get; set; }
+        public DbSet<Evenement> Events { get; set; }
+        public DbSet<EvenementImage> EventsImages { get; set; }
     }
 }
