@@ -8,7 +8,7 @@ using bo;
 
 namespace dal
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context() : base("name=DefaultConnection")
         {

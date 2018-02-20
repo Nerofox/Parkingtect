@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.marker-position {
+    background-color: #7e0101;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;

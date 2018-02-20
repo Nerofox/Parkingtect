@@ -29,10 +29,13 @@ namespace Parkitect.Controllers
                 //create parking
                 Parking newParking = new Parking();
                 newParking.Id = data.parks[i].id.ToString();
-                newParking.Name = data.parks[i].parkInformation.name.ToString();
-                newParking.Status = data.parks[i].parkInformation.status.ToString();
-                newParking.FreePlace = Convert.ToInt32(data.parks[i].parkInformation.free.ToString());
-                newParking.MaxPlace = Convert.ToInt32(data.parks[i].parkInformation.max.ToString());
+                if (data.parks[i].parkInformation != null)
+                {
+                    newParking.Name = data.parks[i].parkInformation.name.ToString();
+                    newParking.Status = data.parks[i].parkInformation.status.ToString();
+                    newParking.FreePlace = Convert.ToInt32(data.parks[i].parkInformation.free.ToString());
+                    newParking.MaxPlace = Convert.ToInt32(data.parks[i].parkInformation.max.ToString());
+                }
 
                 //search coordinate
                 for (int j = 0; j < data.features.features.Count; j++)

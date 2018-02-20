@@ -22,9 +22,9 @@ namespace bll
             return this.eventRepository.FindAll();
         }
 
-        public Evenement Find(int Id)
+        public Evenement Find(int id)
         {
-            return this.eventRepository.Find(Id);
+            return this.eventRepository.Find(id);
         }
 
         public void Update(Evenement evt)
