@@ -25,9 +25,24 @@ namespace bo
 
         public dynamic Geometry { get; set; }
 
+        public DateTime CloseTime { get; set; }
+
+        public DateTime OpenTime { get; set; }
         public Parking()
         {
 
+        }
+
+        public Boolean isParkingOpen(DateTime currentTime, DateTime CloseTime, DateTime OpenTime)
+        {
+            bool isOpen = true;
+
+            if (currentTime > CloseTime && currentTime < OpenTime)
+            {
+                isOpen = false;
+            }
+
+            return isOpen;
         }
     }
 }
