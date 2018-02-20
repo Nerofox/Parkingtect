@@ -14,15 +14,20 @@ namespace dal
         private Context ctx;
         private DbSet<T> dbSet;
 
-        public BasicRepository()
+        public BasicRepository(Context ctx = null)
         {
-            this.ctx = new Context();
-            this.dbSet = ctx.Set<T>();
+            this.ctx = ctx;
+            if (ctx == null)
+            {
+                this.ctx = new Context();
+            }
+
+            this.dbSet = this.ctx.Set<T>();
         }
 
         public BasicRepository<U> CreateRepository<U>() where U : class
         {
-            return new BasicRepository<U>();
+            return new BasicRepository<U>(this.ctx);
         }
 
         public T Find(int id)
