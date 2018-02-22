@@ -8,6 +8,7 @@ using Tools;
 
 namespace Parkitect.Controllers
 {
+    [AllowAnonymous]
     public class ApiParkingController : Controller
     {
         const string API_PARKING = "http://data.citedia.com/r1/";

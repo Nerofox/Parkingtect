@@ -5,7 +5,8 @@ using bll;
 using Tools;
 
 namespace Parkitect.Controllers
-{
+{  [Authorize]
+
     public class ApiRouteController : Controller
     {
         static HttpClient client = new HttpClient();

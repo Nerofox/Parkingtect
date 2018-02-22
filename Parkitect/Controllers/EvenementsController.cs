@@ -12,6 +12,7 @@ using bo;
 
 namespace Parkitect.Controllers
 {
+    [Authorize]
     public class EvenementsController : Controller
     {
 
