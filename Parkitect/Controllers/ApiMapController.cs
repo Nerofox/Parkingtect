@@ -15,7 +15,7 @@ namespace Parkitect.Controllers
         private const string API_TOKEN = "pk.eyJ1IjoibmVyb2ZveCIsImEiOiJjamR1MDVnMXAyaGEwMnFxcGNvYWJ2cjByIn0.to1lq16P7bPjs0bUn4gUjg";
 
         // GET: ApiMap
-        public async Task<string> BestItiParking()
+      /*  public async Task<string> BestItiParking()
         {
             ApiParkingController apiPark = new ApiParkingController();
             List<ParkingIti> list = JsonConvert.DeserializeObject<List<ParkingIti>>(apiPark.List());
@@ -24,6 +24,6 @@ namespace Parkitect.Controllers
             var lat = Request.QueryString["lat"];
 
             return JsonConvert.SerializeObject(list);
-        }
+        }*/
     }
 }

@@ -53,16 +53,16 @@
     <Compile Include="BasicRepository.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="EvenementImageRepository.cs" />
+    <Compile Include="Migrations\201802221043225_okbro.cs" />
+    <Compile Include="Migrations\201802221043225_okbro.Designer.cs">
+      <DependentUpon>201802221043225_okbro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802221352309_yo.cs" />
+    <Compile Include="Migrations\201802221352309_yo.Designer.cs">
+      <DependentUpon>201802221352309_yo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserRepository.cs" />
     <Compile Include="EvenementRepository.cs" />
-    <Compile Include="Migrations\201802191300016_first.cs" />
-    <Compile Include="Migrations\201802191300016_first.Designer.cs">
-      <DependentUpon>201802191300016_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802191352250_second.cs" />
-    <Compile Include="Migrations\201802191352250_second.Designer.cs">
-      <DependentUpon>201802191352250_second.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,11 +77,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802191300016_first.resx">
-      <DependentUpon>201802191300016_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802221043225_okbro.resx">
+      <DependentUpon>201802221043225_okbro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802191352250_second.resx">
-      <DependentUpon>201802191352250_second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802221352309_yo.resx">
+      <DependentUpon>201802221352309_yo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
