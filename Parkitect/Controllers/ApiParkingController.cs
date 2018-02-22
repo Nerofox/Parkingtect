@@ -2,17 +2,13 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Tools;
 
 namespace Parkitect.Controllers
 {
+    [AllowAnonymous]
     public class ApiParkingController : Controller
     {
         const string API_PARKING = "http://data.citedia.com/r1/";
