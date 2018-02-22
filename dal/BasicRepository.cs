@@ -11,8 +11,8 @@ namespace dal
     public class BasicRepository<T> where T : class
     {
 
-        private Context ctx;
-        private DbSet<T> dbSet;
+        protected Context ctx;
+        protected DbSet<T> dbSet;
 
         public BasicRepository(Context ctx = null)
         {
@@ -29,7 +29,7 @@ namespace dal
         {
             return new BasicRepository<U>(this.ctx);
         }
-
+        
         public T Find(int id)
         {
             return this.dbSet.Find(id);
@@ -67,6 +67,7 @@ namespace dal
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                throw;
             }
         }
 

@@ -57,6 +57,11 @@
         <dd>
             @Html.DisplayFor(model => model.Date)
         </dd>
+        
+        @foreach (var img in Model.Images)
+        {
+            <img src="@img.Path" />
+        }
 
     </dl>
 </div>

@@ -17,5 +17,6 @@ namespace dal
 
         public DbSet<Evenement> Events { get; set; }
         public DbSet<EvenementImage> EventsImages { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

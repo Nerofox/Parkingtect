@@ -9,5 +9,9 @@ namespace dal
 {
     public class EvenementImageRepository : BasicRepository<EvenementImage>
     {
+        public List<EvenementImage> FindAllByEvenement(int evtId)
+        {
+            return this.dbSet.Where(img => img.Evenement.Id == evtId).ToList();
+        }
     }
 }

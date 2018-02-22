@@ -53,6 +53,7 @@
     <Compile Include="BasicRepository.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="EvenementImageRepository.cs" />
+    <Compile Include="UserRepository.cs" />
     <Compile Include="EvenementRepository.cs" />
     <Compile Include="Migrations\201802191300016_first.cs" />
     <Compile Include="Migrations\201802191300016_first.Designer.cs">
