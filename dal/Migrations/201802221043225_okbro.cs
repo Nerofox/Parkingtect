@@ -3,7 +3,7 @@ namespace dal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class first : DbMigration
+    public partial class okbro : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace dal.Migrations
                         City = c.String(),
                         Address = c.String(),
                         ZipCode = c.String(),
+                        Duration = c.Int(nullable: false),
                         Theme = c.String(),
                         Date = c.DateTime(nullable: false),
                     })
@@ -24,7 +25,7 @@ namespace dal.Migrations
                 "dbo.EvenementImages",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         Path = c.String(),
                         Evenement_Id = c.Int(),

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace bo
 {
@@ -23,7 +24,7 @@ namespace bo
 
         public DateTime Date { get; set; }
 
-        public List<EvenementImage> Images { get; set; }
+        public virtual List<EvenementImage> Images { get; set; }
 
         public Evenement()
         {

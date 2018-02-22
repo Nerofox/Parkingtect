@@ -58,7 +58,7 @@ namespace Parkitect.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.evenementService.Create(evenement);
+                this.evenementService.Create(evenement, Request.Files);
                 return RedirectToAction("Index");
             }
 
