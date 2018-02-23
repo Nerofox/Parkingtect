@@ -8,7 +8,9 @@ namespace Parkitect.ApiModel
 {
     public class ParkingIti : Parking
     {
-        public int Dist { get; set; }
-        public int TimeSecund { get; set; }
+        public double Dist { get; set; }
+        public double TimeSecund { get; set; }
+
+        public dynamic GeometryIti { get; set; }
     }
 }

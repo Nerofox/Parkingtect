@@ -1,6 +1,6 @@
 ﻿function addMarker(coordinates, title, className) {
     // create the popup
-    var popup = new mapboxgl.Popup().setHTML(title);
+    var popup = new mapboxgl.Popup({ closeOnClick: false }).setHTML(title);
 
     // create DOM element for the marker
     var el = document.createElement('div');
@@ -11,6 +11,29 @@
         .setLngLat(coordinates)
         .setPopup(popup) // sets a popup on this marker
         .addTo(map);
+}
+
+function addLayer(id, geometry, color) {
+    map.addLayer({
+        'id': id,
+        'type': 'line',
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": geometry
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": color,
+            "line-width": 4
+        }
+    });
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmVyb2ZveCIsImEiOiJjamR1MDVnMXAyaGEwMnFxcGNvYWJ2cjByIn0.to1lq16P7bPjs0bUn4gUjg';
@@ -28,6 +51,13 @@ var geocoder = new MapboxGeocoder({
 map.addControl(geocoder);
 geocoder.on("result", function (e) {
     addMarker(e.result.geometry.coordinates, e.result.place_name, "marker marker-position");
+    //search iti
+    $.get("/ApiMap/BestItiParking?lon=" + e.result.geometry.coordinates[0] + "&lat=" + e.result.geometry.coordinates[1], function (data) {
+        data = JSON.parse(data);
+        addLayer(data[0].Id, data[0].GeometryIti, "#34C924");
+        addLayer(data[1].Id, data[1].GeometryIti, "#0080FF");
+        addLayer(data[2].Id, data[2].GeometryIti, "#0080FF");
+    });
 });
 
 $(document).ready(function () {
