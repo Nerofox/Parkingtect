@@ -120,5 +120,15 @@ namespace Parkitect.Controllers
             this.evenementService.Remove(evenement);
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteImage(int id)
+        {
+            var evtImageService = new EvenementImageService();
+            var image = evtImageService.Find(id);
+            var evtId = image.Evenement.Id;
+            evtImageService.Remove(image);
+
+            return RedirectToAction("Edit", new {id = evtId});
+        }
     }
 }

@@ -65,6 +65,22 @@
             </div>
         </div>
         
+        
+        @foreach (var img in Model.Images)
+        {
+            <img src="@img.Path" /><br />
+            @Html.ActionLink(
+                linkText: "Supprimer",
+                actionName: "DeleteImage",
+                controllerName: "Evenements",
+                routeValues: new {
+                    id = img.Id,
+                },
+                htmlAttributes: null
+            )
+        }
+
+        
         <div class="form-group">
             <input type="file" multiple name="files" />
         </div>
