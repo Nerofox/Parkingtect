@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace bo
 {
 
-        public enum Jour
+        public enum TypeJour
         {
             Dimanche = 0,
             Lundi = 1,
@@ -22,7 +22,7 @@ namespace bo
 
         public static class EnumExtension
         {
-            public static int GetValue(this Jour nb)
+            public static int GetValue(this TypeJour nb)
             {
                 return (int)nb;
             }
