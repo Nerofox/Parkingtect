@@ -39,6 +39,8 @@ function addLayer(id, geometry, color) {
 }
 
 function initMap(container) {
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmVyb2ZveCIsImEiOiJjamR1MDVnMXAyaGEwMnFxcGNvYWJ2cjByIn0.to1lq16P7bPjs0bUn4gUjg';
     map = new mapboxgl.Map({
         container: container, // container id
         style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
@@ -50,13 +52,12 @@ function initMap(container) {
         accessToken: mapboxgl.accessToken
     });
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmVyb2ZveCIsImEiOiJjamR1MDVnMXAyaGEwMnFxcGNvYWJ2cjByIn0.to1lq16P7bPjs0bUn4gUjg';
 
     map.addControl(geocoder);
 }
 
 
-geocoder.on("result", function (e) {
+/*geocoder.on("result", function (e) {
     addMarker(e.result.geometry.coordinates, e.result.place_name, "marker marker-position");
     //search iti
     $.get("/ApiMap/BestItiParking?lon=" + e.result.geometry.coordinates[0] + "&lat=" + e.result.geometry.coordinates[1], function (data) {
@@ -65,4 +66,4 @@ geocoder.on("result", function (e) {
         addLayer(data[1].Id, data[1].GeometryIti, "#0080FF");
         addLayer(data[2].Id, data[2].GeometryIti, "#0080FF");
     });
-});
+});*/

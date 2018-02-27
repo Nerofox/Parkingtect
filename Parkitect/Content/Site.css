@@ -15,6 +15,10 @@
     background-color: #7e0101;
 }
 
+.marker-user {
+    background-color: #4cff00;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;

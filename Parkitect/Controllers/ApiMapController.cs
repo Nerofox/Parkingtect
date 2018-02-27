@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Tools;
+using bll;
 
 namespace Parkitect.Controllers
 {
@@ -15,6 +16,17 @@ namespace Parkitect.Controllers
         private const string API_MAPBOX = "https://api.mapbox.com/";
         const string API_PARKING = "http://data.citedia.com/r1/";
         private const string API_TOKEN = "pk.eyJ1IjoibmVyb2ZveCIsImEiOiJjamR1MDVnMXAyaGEwMnFxcGNvYWJ2cjByIn0.to1lq16P7bPjs0bUn4gUjg";
+
+        public async Task<string> GetEvenementLocation(int id)
+        {
+            var evenementService = new EvenementService();
+            var evenement = evenementService.Find(id);
+
+            var str = (API_MAPBOX + "geocoding/v5/mapbox.places/" + evenement.Address + ".json?access_token=" + API_TOKEN).Replace(" ", "%20");
+            dynamic endPointString = Api.Get(str);
+
+            return JsonConvert.SerializeObject(endPointString);
+        }
 
         // GET: ApiMap
         public async Task<string> BestItiParking()

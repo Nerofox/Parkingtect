@@ -64,6 +64,7 @@
         }
 
         <div id="map"></div>
+        <button id="okay">Calculer parking</button>
 
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
         <script src="~/Scripts/map.js"></script>
@@ -71,17 +72,41 @@
 
             <script>
 
+                function getUserLocation() {
+                    navigator.geolocation.getCurrentPosition(function (data) {
+                        console.log([data.coords.longitude, data.coords.latitude]);
+                        addMarker([data.coords.longitude, data.coords.latitude], "Votre position", "marker marker-user");
+                    });
+                }
+
                 initMap("map");
                 $(document).ready(function () {
                     //load parking in map
-                    $.get("/ApiParking/List", function (data) {
+
+                    geocoder.on("result", function (e) {
+                        addMarker(e.result.geometry.coordinates, "Votre position", "marker marker-user");
+                    });
+
+                    $('#okay').click(function (event) {
+                        console.log('click');
+                        getUserLocation();
+                    });
+
+                    $.get("/ApiMap/GetEvenementLocation/@Model.Id", function (data) {
+                        var locations = JSON.parse(data).features;
+                        var evtLocation = locations[0];
+
+                        addMarker(evtLocation.center, "Lieu de l'evenement", "marker marker-position");
+                    });
+
+                    /*$.get("/ApiParking/List", function (data) {
                         data = JSON.parse(data);
 
                         for (var i = 0; i < data.length; i++) {
                             if (data[i].Name != null)
                                 addMarker(data[i].Geometry.coordinates, "Nom : " + data[i].Name + "<br>Place libre : " + data[i].FreePlace + "<br>Place max : " + data[i].MaxPlace, "marker")
                         }
-                    });
+                    });*/
                 });
 
             </script>
