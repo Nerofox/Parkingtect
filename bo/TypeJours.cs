@@ -27,5 +27,5 @@ namespace bo
                 return (int)nb;
             }
         }
-    }
+    
 }

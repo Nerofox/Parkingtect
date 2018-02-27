@@ -18,10 +18,6 @@ namespace bo
         public DateTime CloseTime { get; set; }
 
         public DateTime OpenTime { get; set; }
-        public Parking()
-        {
-
-        }
 
         public Boolean isParkingOpen(DateTime currentTime, DateTime CloseTime, DateTime OpenTime)
         {

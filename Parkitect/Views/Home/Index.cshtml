@@ -11,3 +11,23 @@
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
 <script src="~/Scripts/map.js"></script>
+@section scripts {
+
+    <script>
+
+        initMap("map");
+        $(document).ready(function () {
+            //load parking in map
+            $.get("/ApiParking/List", function (data) {
+                data = JSON.parse(data);
+
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].Name != null)
+                        addMarker(data[i].Geometry.coordinates, "Nom : " + data[i].Name + "<br>Place libre : " + data[i].FreePlace + "<br>Place max : " + data[i].MaxPlace, "marker")
+                }
+            });
+        });
+
+    </script>
+    
+}
