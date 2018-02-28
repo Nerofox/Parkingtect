@@ -25,12 +25,11 @@ namespace bo
 
         public dynamic Geometry { get; set; }
 
-        public DateTime CloseTime { get; set; }
+        public List<HoraireParking> ListeHoraire { get; set; }
 
-        public DateTime OpenTime { get; set; }
         public Parking()
         {
-
+            List<HoraireParking> ListeHoraire = new List<HoraireParking>();
         }
 
         public Boolean isParkingOpen(DateTime currentTime, DateTime CloseTime, DateTime OpenTime)
