@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using bll;
 
 namespace Parkitect.Controllers
 {
     public class HomeController : Controller
     {
+
+        private EvenementService evenementService;
+
+        public HomeController()
+        {
+            this.evenementService = new EvenementService();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            return View(this.evenementService.FindAll());
         }
 
         public ActionResult About()

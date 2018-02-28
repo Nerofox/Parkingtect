@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<bo.Evenement>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,6 +9,35 @@
         <div id="map"></div>
     </div>
 </div>
+
+
+
+    <div class="card-deck">
+        @foreach (var item in Model)
+        {
+            
+                <div class="card">
+                    @if (item.Images.Count == 0)
+                    {
+                        <img class="card-img-top img-fluid" src="https://media3.giphy.com/media/hsBZfDG7wiWHu/200.gif">
+                    }
+                    else
+                    {
+                        <img class="img-fluid" src="@item.Images[0].Path">
+                    }
+                    <div class="card-header">@item.Theme</div>
+                    <div class="card-body">
+                        <p class="card-title">@item.Date</p>
+                        <p class="card-text">@item.Address - @item.ZipCode @item.City</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@Url.Action("Details", "Evenements", new { id = item.Id }, Request.Url.Scheme)" class="btn btn-primary btn-block">Detail</a>
+                    </div>
+                </div>
+            
+        }
+    </div>
+
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
 <script src="~/Scripts/map.js"></script>
