@@ -9,15 +9,16 @@ namespace Tools
 {
     public class File
     {
-        public static void UploadHttpFile(HttpPostedFileBase file, string destination)
+        public static bool UploadHttpFile(HttpPostedFileBase file, string destination)
         {
             if (file != null && file.ContentLength > 0)
             {
                 file.SaveAs(destination);
+                return true;
             }
             else
             {
-                throw new Exception("File invalid");
+                return false;
             }
         }
 

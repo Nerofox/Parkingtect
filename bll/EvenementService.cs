@@ -47,15 +47,16 @@ namespace bll
             for (var i = 0; i < files.Count; i++)
             {
                 var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "images", files[i].FileName);
-                File.UploadHttpFile(files[i], path);
-
-                var evtImage = new EvenementImage()
+                if(File.UploadHttpFile(files[i], path))
                 {
-                    Title = files[i].FileName,
-                    Path = Path.Combine("/", "Content", "images", files[i].FileName),
-                    Evenement = this.eventRepository.Find(evt.Id)
-                };
-                evtImageRepository.Create(evtImage);
+                    var evtImage = new EvenementImage()
+                    {
+                        Title = files[i].FileName,
+                        Path = Path.Combine("/", "Content", "images", files[i].FileName),
+                        Evenement = this.eventRepository.Find(evt.Id)
+                    };
+                    evtImageRepository.Create(evtImage);
+                }
             }
         }
 

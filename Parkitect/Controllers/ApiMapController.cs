@@ -22,7 +22,7 @@ namespace Parkitect.Controllers
             var evenementService = new EvenementService();
             var evenement = evenementService.Find(id);
 
-            var str = (API_MAPBOX + "geocoding/v5/mapbox.places/" + evenement.Address + ".json?access_token=" + API_TOKEN).Replace(" ", "%20");
+            var str = (API_MAPBOX + "geocoding/v5/mapbox.places/" + evenement.Address + " " + evenement.City + ".json?access_token=" + API_TOKEN).Replace(" ", "%20");
             dynamic endPointString = Api.Get(str);
 
             return JsonConvert.SerializeObject(endPointString);
