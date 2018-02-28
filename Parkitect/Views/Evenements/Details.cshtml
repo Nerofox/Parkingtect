@@ -85,6 +85,23 @@
 
                     geocoder.on("result", function (e) {
                         addMarker(e.result.geometry.coordinates, "Votre position", "marker marker-user");
+
+                        $.get("/ApiMap/GetParkingsEvenement/@Model.Id?lon=" + e.result.geometry.coordinates[0] + "&lat=" + e.result.geometry.coordinates[1], function (data) {
+                            data = JSON.parse(data);
+                            let i = 0;
+                            for(let elt of data) {
+                                if (i == data.length - 1) {
+                                    addLayer(elt.Parking.Parking.id + 'driving', elt.DrivingDirection, "#34C924");
+                                    addLayer(elt.Parking.Parking.id + 'walking', elt.WalkingDirection, "#34C924");
+                                } else {
+                                    addLayer(elt.Parking.Parking.id + 'driving', elt.DrivingDirection, "#0080FF");
+                                    addLayer(elt.Parking.Parking.id + 'walking', elt.WalkingDirection, "#0080FF");
+                                }
+                                i++;
+                                addMarker(elt.Parking.Location, elt.Parking.Parking.parkInformation.name, "marker");
+
+                            }
+                        });
                     });
 
                     $('#okay').click(function (event) {
